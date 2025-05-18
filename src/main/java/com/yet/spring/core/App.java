@@ -41,16 +41,16 @@ public class App {
         logEvent(EventType.INFO, event, "Some event for 1");
         
         event = ctx.getBean(Event.class);
-        logEvent(EventType.INFO, event, "One more event for 1");
+        logEvent(EventType.WARNING, event, "event for 2");
         
         event = ctx.getBean(Event.class);
-        logEvent(EventType.INFO, event, "And one more event for 1");
+        logEvent(EventType.BIGERROR, event, "event for 3");
         
         event = ctx.getBean(Event.class);
-        logEvent(EventType.ERROR, event, "Some event for 2");
+        logEvent(EventType.ERROR, event, "Some event for 4");
         
         event = ctx.getBean(Event.class);
-        logEvent(null, event, "Some event for 3");
+        logEvent(null, event, "Some event for 5");
     }
     
     public App() {}

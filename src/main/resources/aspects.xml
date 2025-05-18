@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/util/spring-util-3.2.xsd
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
-        
+    <import resource="loggers.xml"/>
     <aop:aspectj-autoproxy />
     
     <bean id="loggingAspect" class="com.yet.spring.core.aspects.LoggingAspect"/>
@@ -34,7 +34,7 @@
                 &amp;&amp; within(com.yet.spring.core.loggers.ConsoleEventLogger)
                 &amp;&amp; args(evt)" />
             
-            <aop:around pointcut-ref="consoleLogging" method="aroundLogEvent" arg-names="evt" />
+            <aop:around pointcut-ref="consoleLogging" method="aroundLogEvent" arg-names="jp,evt" />
         </aop:aspect>
 
 </aop:config>
